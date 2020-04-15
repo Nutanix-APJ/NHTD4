@@ -1,7 +1,7 @@
 .. title:: Files
 
 ---------------------------
-Using Files Analytics
+Share managment and analytics
 ---------------------------
 
 *The estimated time to complete this lab is 45 minutes.*

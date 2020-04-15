@@ -8,7 +8,6 @@
   :hidden:
 
   files_deploy/files_deploy
-  files_smb/files_smb
   file_analytics_deploy/file_analytics_deploy
   file_analytics/file_analytics
   

@@ -16,6 +16,19 @@ Deploy this Windows 10 VM on your assigned cluster if directed to do so as part 
 Deploying Tools VM
 ++++++++++++++++++
 
+Using an SSH client, connect to the Node A CVM IP <10.42.xx.29> in your assigned block using the following credentials:
+
+Username - nutanix
+
+Password - default
+
+Execute the following commands to upload AD image:
+
+.. code-block:: bash
+
+  acli image.create AutoDC container=Images image_type=kDiskImage source_url=https://s3.amazonaws.com/get-ahv-images/Windows10-1709.qcow2
+
+
 In **Prism Central** > select :fa:`bars` **> Virtual Infrastructure > VMs**, and click **Create VM**.
 
 Fill out the following fields:

@@ -18,15 +18,18 @@ Deploy File Analytics
 
 #. Select **Deploy**
 
-   For the purpose of saving time, the File Analytics 2.0.0 package has already been uploaded to your cluster. Files binaries can be downloaded from the Nutanix Portal and uploaded manually.
+   For the purpose of saving time, the File Analytics 2.1.0 package has already been uploaded to your cluster. Files binaries can be downloaded from the Nutanix Portal and uploaded manually.
 
 #. After the upload completes select **Install**
 
 #. Fill out the details
 
-   - **Name** - Initials
+   - **Name** - Initials-Analytics
    - **Storage Container** – Will automatically select the container used by your file server instance
-   - **Network List** – Primary - Managed
+   - **Network List** – Primary - UnManaged
+   - **Subnet Mask** – 255.255.255.128
+   - **Defult Gateway IP** – 10.42.xx.1
+   - **IP Address** – 10.42.xx.71
 
 #. Select **Show Advanced Settings**
 
@@ -43,7 +46,7 @@ Deploy File Analytics
 #. On the Enable File Analytics page enter your domain administrator which is also your file server administrator.
 
    - **Username**: administrator
-   - **Password**: nutanix/4u
+   - **Password**: default
 
    .. figure:: images/34.png
 
