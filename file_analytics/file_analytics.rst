@@ -1,32 +1,11 @@
 .. title:: Files
 
---------------------------------
+---------------------------
 Using Files Analytics
---------------------------------
+---------------------------
 
 *The estimated time to complete this lab is 45 minutes.*
 
-Traditionally, file storage has been yet another silo within IT, introducing unnecessary complexity and suffering from the same issues of scale and lack of continuous innovation seen in SAN storage. Nutanix believes there is no room for silos in the Enterprise Cloud. By approaching file storage as an app, running in software on top of a proven HCI core, Nutanix Files  delivers high performance, scalability, and rapid innovation through One Click management.
-
-**In this lab you will work with Files to manage SMB shares and NFS exports and explore the new functionality for Files deployments with File Analytics.**
-
-For the purpose of time, and sharing infrastructure resources, a Files cluster has already been provisioned on your cluster. The **BootcampFS** Files is a single node instance, typical **Files** deployments would start with 3 File Server VMs, with the ability to scale up and scale out as required for performance.
-
-**BootcampFS** has been configured to use the **Primary** network to communicate with the backend storage, iSCSI connections from the **CVM** to **Volume Groups**, and the **Secondary** network for communication with clients, Active Directory, anti-virus services, etc.
-
-.. figure:: images/1.png
-
-.. note::
-
-  It is typically desirable in production environments to deploy Files with dedicated virtual networks for client and storage traffic. When using two networks, Files will, by design, disallow client traffic the storage network, meaning VMs assigned to the primary network will be unable to access shares.
-
-As Files leverages Nutanix Volume Groups for data storage, it can take advantage of the same underlying storage benefits such as compression, erasure coding, snapshots, and replication.
-
-In **Prism Element > File Server > File Server**, select **BootcampFS** and click **Protect**.
-
-   .. figure:: images/10.png
-
-Observe the default Self Service Restore schedules, this feature controls the snapshot schedule for Windows' Previous Versions functionality. Supporting Windows Previous Versions allows end users to roll back changes to files without engaging storage or backup administrators. Note these local snapshots do not protect the file server cluster from local failures and that replication of the entire file server cluster can be performed to remote Nutanix clusters.
 
 Managing SMB Shares
 +++++++++++++++++++
@@ -36,24 +15,19 @@ In this exercise you will create and test a SMB share, used to support the unstr
 Creating the Share
 ..................
 
-#. In **Prism Element > File Server**, click **+ Share/Export**.
+Configuring SMB Home Share
++++++++++++++++++++++++++++
 
-#. Fill out the following fields:
+In **Prism** > **File Server**, click **+Share/Export**. 
 
-   - **Name** - *Initials*\ **-FiestaShare**
-   - **Description (Optional)** - Fiesta app team share, used by PM, ENG, and MKT
-   - **File Server** - **BootcampFS**
-   - **Share Path (Optional)** - Leave blank. This field allows you to specify an existing path in which to create the nested share.
-   - **Max Size (Optional)** - 200GiB
-   - **Select Protocol** - SMB
+Fill out the following fields and click Next:
+- **Name** – home
+- **File Server**- POCxx-Files
+- **Select Protocol** - SMB
+ 
+ 
+.. image:: images/image019.png
 
-   .. figure:: images/2.png
-
-   Because this is a single node AOS cluster and therefore a single file server VM, all shares will be **Standard** shares. A Standard share means that all top level directories and files within the share, as well as connections to the share, are served from a single file server VM.
-
-   If this were a three node Files cluster or larger you’d have an option to create a **Distributed** share.  Distributed shares are appropriate for home directories, user profiles, and application folders. This type of share shards top level directories across all Files VMs and load balances connections across all Files VMs within the Files cluster.
-
-#. Click **Next**.
 
 #. Select **Enable Access Based Enumeration** and **Self Service Restore**. Select **Blocked File Types** and enter a comma separated list of extensions like .flv,.mov.
 
