@@ -4,12 +4,59 @@
 Deploying Task Manager
 ----------------------
 
-*The estimated time to complete this lab is 10 minutes.*
+*The estimated time to complete this lab is 20 minutes.*
 
 Overview
 ++++++++
 
-**This exercise walks you through importing and launching a Calm blueprint to deploy a simple Task Manager application used in multiple labs. You do not need to complete this exercise unless directed to do so as staging for another lab.**
+**This exercise walks you through importing and launching a Calm blueprint to deploy a simple Task Manager application used in Day2‘s Flow labs. You do not need to complete this exercise unless directed to do so as staging for another lab.**
+
+
+Enabling App Management
++++++++++++++++++++++++
+
+Open \https://*<Prism-Central-IP>*:9440/ in a browser and log in.
+
+From the navigation bar, select **Service > Calm** 
+
+Click **Enable**.
+
+.. figure:: images/581enable1.png
+
+Select **Enable App Management** and click **Save**.
+
+.. note:: Nutanix Calm is a separately licensed product that can be used with Acropolis Starter, Pro, or Ultimate editions. Each Prism Central instance can manage up to 25 VMs for free before additional licensing is required.
+
+.. figure:: images/581enable2.png
+
+You should get verification that Calm is enabling, which will take 5 to 10 minutes.
+
+.. figure:: images/581enable3.png
+
+
+
+Creating A Project
+++++++++++++++++++
+
+Projects are the logical construct that integrate Calm with Nutanix's native Self-Service Portal (SSP) capabilities, allowing an administrator to assign both infrastructure resources and the roles/permissions of Active Directory users/groups to specific Blueprints and Applications.
+
+Click **default** in the project list
+
+.. figure:: images/581enable8.png
+
+Under **Infrastructure**, fill out the following fields and click **comfirm** :
+- **Select which resources you want this project to consume** - Nutanix
+- **AHV Cluster** - *<POCxx-ABC>*
+- Under **Network**, select the **Primary** and if available, the **Secondary** networks. 
+
+Select :fa:`star` for the **Primary** network to make it the default virtual network for VMs in the **default** project.
+
+Click **Save**.
+
+.. figure:: images/581enable81.png
+
+
+
 
 Verifying the Default Project
 +++++++++++++++++++++++++++++
