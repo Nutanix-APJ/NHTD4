@@ -8,8 +8,9 @@
   :hidden:
 
   files_deploy/files_deploy
-  files_smb/files_smb
-  volumes/volumes
+  file_analytics_deploy/file_analytics_deploy
+  file_analytics/file_analytics
+  files_share/files_share
 
 .. toctree::
   :maxdepth: 2
