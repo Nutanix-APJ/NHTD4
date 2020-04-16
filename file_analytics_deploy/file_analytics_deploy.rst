@@ -7,6 +7,8 @@ File Analytics: Deploy
 Overview
 ++++++++
 
+*The estimated time to compleate this lab is 10 minutes.*
+
 In this exercise you will deploy the File Analytics VM and scan the existing shares to build out the dashboard.  You will also create anomaly alerts and view the audit details for your file server instance.
 
 Deploy File Analytics
