@@ -26,7 +26,7 @@ Execute the following commands to upload AD image:
 
 .. code-block:: bash
 
-  acli image.create AutoDC container=Images image_type=kDiskImage source_url=https://s3.amazonaws.com/get-ahv-images/Windows10-1709.qcow2
+  acli image.create Windows10 container=Images image_type=kDiskImage source_url=https://s3.amazonaws.com/get-ahv-images/Windows10-1709.qcow2
 
 
 In **Prism Central** > select :fa:`bars` **> Virtual Infrastructure > VMs**, and click **Create VM**.
