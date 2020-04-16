@@ -4,6 +4,10 @@
 Files Config Managment and Analytics
 ---------------------------
 
+
+Overview
++++++++++
+
 *The estimated time to complete this lab is 20 minutes.*
 
 
@@ -92,8 +96,6 @@ Testing the Share
 
 #. Return to **Prism Element > File Server > Share/Export**, select your share. Review the **Share Details**, **Usage** and **Performance** tabs to understand the high level information available on a per share basis, including the number of files & connections, storage utilization over time, latency, throughput, and IOPS.
 
-   .. figure:: images/11.png
-
    In the next exercise, you will see how Files can provide further insights into usage of each File Server and Share.
 
 File Analytics
@@ -103,16 +105,7 @@ In this exercise you will explore the new, integrated File Analytics capabilitie
 
 #. In **Prism Element > File Server > File Server**, select **POCxx-Files** and click **File Analytics** belowing.
 
-   .. note::
-
-      File Analytics should be enabled, you will need to provide your Files administrator account, as Analytics will need to be able to scan all shares.
-
-      - **Username**: NTNXLAB\\administrator
-      - **Password**: default
-
-      .. figure:: images/old13.png
-
-#. As this is a shared environment, the dashboard will likely already be populated with data from shares created by other users. To scan your newly created share, click :fa:`gear` **> Scan File System**. Select your share and click **Scan**.
+#. To scan your newly created share, click :fa:`gear` **> Scan File System**. Select your share and click **Scan**.
 
    .. figure:: images/14.png
 
