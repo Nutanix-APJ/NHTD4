@@ -1,10 +1,10 @@
 .. title:: Files
 
 ---------------------------
-Share managment and analytics
+Files Config Managment and Analytics
 ---------------------------
 
-*The estimated time to complete this lab is 45 minutes.*
+*The estimated time to complete this lab is 20 minutes.*
 
 
 Managing SMB Shares
@@ -14,9 +14,6 @@ In this exercise you will create and test a SMB share, used to support the unstr
 
 Creating the Share
 ..................
-
-Configuring SMB Home Share
-+++++++++++++++++++++++++++
 
 In **Prism** > **File Server**, click **+Share/Export**. 
 
@@ -65,7 +62,11 @@ Fill out the following fields and click Next:
 Testing the Share
 .................
 
-#. Connect to your *Initials*\ **-WinTools** VM via VM console as a **non-Administrator NTNXLAB** domain account:
+#. Connect to your *Initials*\ **-WinTools** VM via VM console, login in with any account name you created
+
+#. Open ``\\POCxx-Files.ntnxlab.local\`` in **File Explorer**.
+
+#. login as a **non-Administrator NTNXLAB** domain account:
 
    .. note::
 
@@ -74,64 +75,20 @@ Testing the Share
    - user01 - user25
    - devuser01 - devuser25
    - operator01 - operator25
-   - **Password** nutanix/4u
+   - **Password** default
 
    .. figure:: images/16.png
-
-   .. note::
-
-     The Windows Tools VM has already been joined to the **NTNXLAB.local** domain. You could use any domain joined VM to complete the following steps.
-
-#. Open ``\\BootcampFS.ntnxlab.local\`` in **File Explorer**.
 
 #. Open a browser within your *Initials*\ **-WinTools** desktop and download sample data to populate in your share:
 
    - **If using a PHX cluster** - http://10.42.194.11/workshop_staging/peer/SampleData_Small.zip
-   - **If using a RTP cluster** - http://10.55.251.38/workshop_staging/peer/SampleData_Small.zip
 
-#. Extract the contents of the zip file into your file share.
+#. Extract the contents of the zip file into your file share *home*, and read and write some documents randomly.
 
-   .. figure:: images/5.png
+   .. figure:: images/161.png
 
    - The **NTNXLAB\\Administrator** user was specified as a Files Administrator during deployment of the Files cluster, giving it read/write access to all shares by default.
    - Managing access for other users is no different than any other SMB share.
-
-..   #. From ``\\BootcampFS.ntnxlab.local\``, right-click *Initials*\ **-FiestaShare > Properties**.
-
-   #. Select the **Security** tab and click **Advanced**.
-
-      .. figure:: images/6.png
-
-   #. Select **Users (BootcampFS\\Users)** and click **Remove**.
-
-   #. Click **Add**.
-
-   #. Click **Select a principal** and specify **Everyone** in the **Object Name** field. Click **OK**.
-
-      .. figure:: images/7.png
-
-   #. Fill out the following fields and click **OK**:
-
-      - **Type** - Allow
-      - **Applies to** - This folder only
-      - Select **Read & execute**
-      - Select **List folder contents**
-      - Select **Read**
-      - Select **Write**
-
-      .. figure:: images/8.png
-
-   #. Click **OK > OK > OK** to save the permission changes.
-
-   All users will now be able to create folders and files within the *Initials*\ **-FiestaShare** share.
-
-#. Open **PowerShell** and try to create a file with a blocked file type by executing the following command:
-
-   .. code-block:: PowerShell
-
-      New-Item \\BootcampFS\INITIALS-FiestaShare\MyFile.flv
-
-   Observe that creation of the new file is denied.
 
 #. Return to **Prism Element > File Server > Share/Export**, select your share. Review the **Share Details**, **Usage** and **Performance** tabs to understand the high level information available on a per share basis, including the number of files & connections, storage utilization over time, latency, throughput, and IOPS.
 
@@ -144,16 +101,14 @@ File Analytics
 
 In this exercise you will explore the new, integrated File Analytics capabilities available in Nutanix Files, including scanning existing shares, creating anomaly alerts, and reviewing audit details. File Analytics is deployed in minutes as a standalone VM through an automated, One Click operation in Prism Element. This VM has already been deployed and enabled in your environment.
 
-#. In **Prism Element > File Server > File Server**, select **BootcampFS** and click **File Analytics**.
-
-   .. figure:: images/12.png
+#. In **Prism Element > File Server > File Server**, select **POCxx-Files** and click **File Analytics** belowing.
 
    .. note::
 
-      File Analytics should already be enabled, but if prompted you will need to provide your Files administrator account, as Analytics will need to be able to scan all shares.
+      File Analytics should be enabled, you will need to provide your Files administrator account, as Analytics will need to be able to scan all shares.
 
       - **Username**: NTNXLAB\\administrator
-      - **Password**: nutanix/4u
+      - **Password**: default
 
       .. figure:: images/old13.png
 

@@ -24,16 +24,16 @@ Deploy File Analytics
 
 #. Fill out the details
 
-   - **Name** - Initials-Analytics
+   - **Name** - FA
    - **Storage Container** – Will automatically select the container used by your file server instance
-   - **Network List** – Primary - UnManaged
+   - **Network List** – Secondary - UnManaged (We choose Secondary subnetwork because FA has to be available to Windows Client VM) 
    - **Subnet Mask** – 255.255.255.128
-   - **Defult Gateway IP** – 10.42.xx.1
-   - **IP Address** – 10.42.xx.71
+   - **Defult Gateway IP** – 10.42.xx.129
+   - **IP Address** – 10.42.xx.171
 
 #. Select **Show Advanced Settings**
 
-#. Ensure **DNS Resolver IP** is set to your Active Directory, ntnxlab.local, domain controller/DNS IP address and **ONLY** that address.
+#. Ensure **DNS Resolver IP** is set to your Active Directory, ntnxlab.local, domain controller/DNS IP address 10.42.xx.yz and **ONLY** that address.
 
 #. Choose **Deploy**
 

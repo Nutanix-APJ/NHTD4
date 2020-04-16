@@ -3,7 +3,7 @@
 
 .. toctree::
   :maxdepth: 2
-  :caption: Files and block service
+  :caption: Files 
   :name: _labs
   :hidden:
 
