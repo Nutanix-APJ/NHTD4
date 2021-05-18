@@ -31,7 +31,7 @@ Deploy Acropolis File Services
 Open \https://*<POCxx-ABC Cluster IP>*:9440 (\https://10.42.xx.37:9440) in your browser and log in with the following credentials:
 
 - **Username** - admin
-- **Password** - techX2020!
+- **Password** - techX2021!
 
 In **Prism > File Server**, click **+ File Server**.
 
